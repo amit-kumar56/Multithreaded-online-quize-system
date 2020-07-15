@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TINFO</title>	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <script>
+        var i=0
+        function myfn(){
+            
+            var x=document.getElementsByTagName('INPUT')[i];
+            x.getAttributeNode('name').value=i+1;
+            i=i+1
+                        
+        }
+    </script>
+    <div class="container">
+        <div class="jumbotron bg-dark text-white" style="margin-top: 30px;border-radius:20px;">
+            <div class="table-responsive">
+                <h1 style="margin-bottom: 30px;">your Questions</h1>
+                
+
+                <table class="table table-hover">
+                    <form action = "/cnresult"  method="POST"></from>
+                       
+                    {% for info in rows.split('::') %}
+                    {% if  info  %}
+                    <div class="form-group">
+                    <div class="card bg-secondary text-white ">
+                        
+                        <div class="card-header ">{{info}} ?</div>
+                        <div class="card-body">
+                            
+                        <input type="text"  name='z'>
+                       <script>
+                           myfn()
+                       </script>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary " style="width: 90px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Submit</button></a>
+                </form>
+                </table>
+            
+        </div>
+       
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RESUPDATE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/ticon.png">
+</head>
+
+<body>
+    <div class="jumbotron bg-dark text-red" style="margin-top: 30px;border-radius:20px;">
+
+    <a href="/"><button type="button" class="btn btn-primary " style="width: 70px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">Home</button></a>
+    
+    <div class="container">
+        <div class="jumbotron" style="margin-top: 15px;border-radius: 25px;width: 500px;margin-left: 300px;">
+            <h1 style="margin-bottom: 15px;"> upload question </h1>
+            <form action="/change " method="POST" class="was-validated" enctype="multipart/form-data">
+                <input type="file" name="file" />
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div  class="text-danger">
+        {{ms}}
+        </div>
+
+    </div>
+    <a href="/cnquestions"><button type="button" class="btn btn-primary " style="width: 110px;height:70px;border-radius: 0px 0px 25px 0px;font-size: 18px;">GET QUESTION</button></a>
+    </div>
+</body>
+
+</html>
